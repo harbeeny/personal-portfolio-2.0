@@ -4,7 +4,7 @@ import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
+    name: "Acme Corp",
     year: "2022",
     title: "Dark Saas Landing Page",
     results: [
@@ -16,7 +16,7 @@ const portfolioProjects = [
     image: darkSaasLandingPage,
   },
   {
-    company: "Innovative Co",
+    name: "Innovative Co",
     year: "2021",
     title: "Light Saas Landing Page",
     results: [
@@ -28,7 +28,7 @@ const portfolioProjects = [
     image: lightSaasLandingPage,
   },
   {
-    company: "Quantum Dynamics",
+    name: "Quantum Dynamics",
     year: "2023",
     title: "AI Startup Landing Page",
     results: [
@@ -42,5 +42,22 @@ const portfolioProjects = [
 ];
 
 export const ProjectsSection = () => {
-  return <div>Projects Section</div>;
+  return (
+    <div className="">
+      <div className="container">
+        <p className=""></p>
+        <h2 className=""></h2>
+        <p className=""></p>
+        <div className="">
+          {portfolioProjects.map(project => (
+            < div className="" key={project.title}>
+              <span>{project.name}</span>
+              <span>{project.year}</span>
+
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 };
