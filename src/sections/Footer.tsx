@@ -1,14 +1,16 @@
 import ArrowUpIcon from "@/assets/icons/arrow-up-right.svg";
 
+// TODO: Add Links to footer
+
 export const Footer = () => {
   const footerLinks = [
     {
       title: "LinkedIn",
-      href: "#",
+      href: "#https://www.linkedin.com/in/huntarb/",
     },
     {
       title: "Github",
-      href: "#",
+      href: "#https://github.com/harbeeny",
     },
     {
       title: "Resume",
@@ -26,7 +28,7 @@ export const Footer = () => {
             <nav className="flex flex-col md:flex-row items-center gap-8">
               {footerLinks.map((link) => (
                 <a
-                  href=""
+                  href={link.href}
                   key={link.title}
                   className="inline-flex items-center gap-1.5"
                 >

@@ -8,6 +8,8 @@ import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 
+// TODO: Implement my personal projects and descriptions
+
 const portfolioProjects = [
   {
     name: "Acme Corp",

@@ -9,6 +9,8 @@ import grainImage from "@/assets/images/grain.jpg";
 import { Card } from "@/components/Card";
 import { Fragment } from "react";
 
+// TODO: Ask for 5 testimonials from friends/family (Nuri, David, John Lotito, etc.)
+
 const testimonials = [
   {
     name: "Alex Turner",

@@ -102,6 +102,7 @@ export const AboutSection = () => {
           title="A Glimpse Into My World"
           description="Learn more about who I am, what I do, and what inspires me."
         />
+        {/* TODO: Implement onclick function that brings you to a list of books or carousel of books */}
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
@@ -113,6 +114,7 @@ export const AboutSection = () => {
                 <Image src={bookImage} alt="Book Cover" />
               </div>
             </Card>
+            {/* TODO: Add icons of languages/frameworks i use */}
             <Card className="h-[320px] md:col-span-3 lg:col-span-2">
               <CardHeader
                 title="My Toolbox"
