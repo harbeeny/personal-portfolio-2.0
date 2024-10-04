@@ -27,7 +27,7 @@ export const ContactSection = () => {
               <div>
                 {/* Use the anchor tag as the button */}
                 <a
-                  href="mailto:hntrbeeny@gmail.com?subject=Let's Connect &body=Hi Hunter, I would like to connect with you."
+                  href="mailto:hntrbeeny@gmail.com?subject=Let's Connect! &body=Hi Hunter, I would like to connect with you."
                   className="text-white bg-gray-900 inline-flex items-center rounded-xl px-6 h-12 gap-2 w-max border border-gray-900 relative z-20 transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
                 >
                   <span className="font-semibold">Contact Me</span>

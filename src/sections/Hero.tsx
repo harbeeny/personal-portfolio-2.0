@@ -6,36 +6,54 @@ import ArrowDown from "@/assets/icons/arrow-down.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
-import GoogleIcon from "@/assets/icons/chrome.svg"
+import GithubIcon from "@/assets/icons/github.svg";
+import LinkedInIcon from "@/assets/icons/linkedin.svg";
+import EmailIcon from "@/assets/icons/email.svg";
+
 import { HeroOrbit } from "@/components/HeroOrbit";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const HeroSection = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Controls animation state
+  const [isModalVisible, setIsModalVisible] = useState(false); // Controls rendering
 
   const openModal = () => {
-    setIsModalOpen(true);
+    setIsModalVisible(true);
+    // Slight delay to allow the modal to render before starting the animation
+    setTimeout(() => {
+      setIsModalOpen(true);
+    }, 10);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    if (!isModalOpen && isModalVisible) {
+      // Wait for the closing animation to complete before unmounting
+      const timer = setTimeout(() => {
+        setIsModalVisible(false);
+      }, 300); // Duration matches the CSS transition duration
+      return () => clearTimeout(timer);
+    }
+  }, [isModalOpen, isModalVisible]);
+
   const modalLinks = [
     {
       title: "LinkedIn",
       href: "https://www.linkedin.com/in/huntarb/",
-      icon: GoogleIcon
+      icon: LinkedInIcon,
     },
     {
       title: "Github",
       href: "https://github.com/harbeeny",
-      icon: ""
+      icon: GithubIcon,
     },
     {
       title: "Email",
-      href: "mailto:hntrbeeny@gmail.com?subject=Let's Connect &body=Hi Hunter, I would like to connect with you.",
-      icon: ""
+      href: "mailto:hntrbeeny@gmail.com?subject=Let's Connect! &body=Hi Hunter, I would like to connect with you.",
+      icon: EmailIcon,
     },
   ];
 
@@ -181,55 +199,49 @@ export const HeroSection = () => {
             </button>
           </div>
         </div>
-        {isModalOpen && (
-          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-            <div className="bg-white rounded-lg p-6 w-[90%] md:w-[400px] relative">
+        {/* Modal */}
+        {isModalVisible && (
+          <div
+            className={`fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 transition-opacity duration-300 ${
+              isModalOpen ? "opacity-100" : "opacity-0"
+            }`}
+            onClick={closeModal}
+          >
+            <div
+              className={`bg-white rounded-lg p-6 w-[90%] md:w-[400px] relative transform transition-all duration-300 ${
+                isModalOpen ? "scale-100 opacity-100" : "scale-95 opacity-0"
+              }`}
+              onClick={(e) => e.stopPropagation()}
+            >
               <button
                 onClick={closeModal}
                 className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
               >
                 &times;
               </button>
-              <h2 className="text-lg text-gray-900 font-semibold mb-4 text-center">
-                Let's Connect
+              <h2 className="text-xl text-gray-900 font-semibold mb-4  justify-center text-center">
+                Let's Connect 😃👍
               </h2>
-              <div className="flex flex-col gap-4">
-                {modalLinks.map((link) => (
-                  <a
-                    href={link.href}
-                    key={link.title}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center text-gray-900 py-2 px-4"
-                  >
-                    <span className="">{link.title}</span>
-                  </a>
-                ))}
-                {/* LinkedIn Button
-                <a
-                  href="https://www.linkedin.com/in/huntarb/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
-                >
-                  <span>LinkedIn</span>
-                </a>
-                {/* Github Button */}
-                {/* <a
-                  href="https://github.com/harbeeny"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
-                >
-                  <span>GitHub</span>
-                </a>
-                {/* Email Button */}
-                {/* <a
-                  href="mailto:hntrbeeny@gmail.com?subject=Let's Connect &body=Hi Hunter, I would like to connect with you."
-                  className="flex items-center justify-center gap-2 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
-                >
-                  <span>Email</span>
-                </a>  */}
+              <div className="flex flex-col gap-4 pt-2 border-t-2 border-gray-950/5">
+                {modalLinks.map((link) => {
+                  const IconComponent = link.icon;
+                  return (
+                    <a
+                      href={link.href}
+                      key={link.title}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 py-2 px-4 rounded-md text-gray-900 hover:bg-gray-900/10 transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
+                    >
+                      {IconComponent && (
+                        <IconComponent className="h-5 w-5 size-10" />
+                      )}
+                      <span className="font-semibold text-lg">
+                        {link.title}
+                      </span>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
