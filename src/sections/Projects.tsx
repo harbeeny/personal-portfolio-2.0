@@ -51,7 +51,7 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24" id="projects">
+    <section className="py-20 pb-16 sm:py-20 lg:py-24" id="projects">
       <div className="">
         <div className="container">
           <SectionHeader
@@ -88,8 +88,12 @@ export const ProjectsSection = () => {
                         </li>
                       ))}
                     </ul>
-                    <a href={project.link}>
-                      <button className="bg-white text-gray-950 h-12 w-full md:w-auto rounded-xl px-6 font-semibold inline-flex items-center justify-center gap-2 mt-8 ">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button className="bg-white text-gray-950 h-12 w-full md:w-auto rounded-xl px-6 font-semibold inline-flex items-center justify-center gap-2 mt-8 transform transition-transform duration-200 hover:scale-105 hover:shadow-lg">
                         <span>Visit Live Site</span>
                         <ArrowUpRight className="size-4" />
                       </button>
