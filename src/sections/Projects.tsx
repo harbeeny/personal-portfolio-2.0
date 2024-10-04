@@ -51,7 +51,7 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="py-20 pb-16 sm:py-20 lg:py-24" id="projects">
+    <section className="py-20 pb-16 sm:py-20 lg:py-28" id="projects">
       <div className="">
         <div className="container">
           <SectionHeader
