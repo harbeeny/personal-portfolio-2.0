@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import memojiImage from "@/assets/images/memoji-computer.png";
 import Image from "next/image";
@@ -6,6 +6,7 @@ import ArrowDown from "@/assets/icons/arrow-down.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
+import GoogleIcon from "@/assets/icons/chrome.svg"
 import { HeroOrbit } from "@/components/HeroOrbit";
 import { useState } from "react";
 
@@ -19,6 +20,24 @@ export const HeroSection = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  const modalLinks = [
+    {
+      title: "LinkedIn",
+      href: "https://www.linkedin.com/in/huntarb/",
+      icon: GoogleIcon
+    },
+    {
+      title: "Github",
+      href: "https://github.com/harbeeny",
+      icon: ""
+    },
+    {
+      title: "Email",
+      href: "mailto:hntrbeeny@gmail.com?subject=Let's Connect &body=Hi Hunter, I would like to connect with you.",
+      icon: ""
+    },
+  ];
 
   return (
     <section id="hero">
@@ -175,7 +194,18 @@ export const HeroSection = () => {
                 Let's Connect
               </h2>
               <div className="flex flex-col gap-4">
-                {/* LinkedIn Button */}
+                {modalLinks.map((link) => (
+                  <a
+                    href={link.href}
+                    key={link.title}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center text-gray-900 py-2 px-4"
+                  >
+                    <span className="">{link.title}</span>
+                  </a>
+                ))}
+                {/* LinkedIn Button
                 <a
                   href="https://www.linkedin.com/in/huntarb/"
                   target="_blank"
@@ -185,7 +215,7 @@ export const HeroSection = () => {
                   <span>LinkedIn</span>
                 </a>
                 {/* Github Button */}
-                <a
+                {/* <a
                   href="https://github.com/harbeeny"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -194,12 +224,12 @@ export const HeroSection = () => {
                   <span>GitHub</span>
                 </a>
                 {/* Email Button */}
-                <a
+                {/* <a
                   href="mailto:hntrbeeny@gmail.com?subject=Let's Connect &body=Hi Hunter, I would like to connect with you."
                   className="flex items-center justify-center gap-2 bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
                 >
                   <span>Email</span>
-                </a>
+                </a>  */}
               </div>
             </div>
           </div>
