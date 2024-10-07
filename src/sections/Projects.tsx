@@ -1,6 +1,8 @@
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+// import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
+// import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import Pricewise from "@/assets/images/Pricewise.png"
+import Chatlation from "@/assets/images/Chatlation.png"
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
@@ -12,9 +14,9 @@ import { Card } from "@/components/Card";
 
 const portfolioProjects = [
   {
-    name: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    name: "Roomies",
+    year: "2024",
+    title: "Roommate Finder App",
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
@@ -24,28 +26,28 @@ const portfolioProjects = [
     image: darkSaasLandingPage,
   },
   {
-    name: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    name: "Chatlation",
+    year: "2024",
+    title: "Saas Translater Chat Room",
     results: [
       { title: "Boosted sales by 20%" },
       { title: "Expanded customer reach by 35%" },
       { title: "Increased brand awareness by 15%" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    link: "https://saas-translator-app-umber.vercel.app/",
+    image: Chatlation,
   },
   {
-    name: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    name: "Pricewise",
+    year: "2024",
+    title: "Amazon Web-scrapper",
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    link: "https://pricewise-6zoatlb6y-harbeenys-projects.vercel.app/",
+    image: Pricewise,
   },
 ];
 

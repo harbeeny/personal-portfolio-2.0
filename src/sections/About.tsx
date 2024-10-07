@@ -188,13 +188,13 @@ export const AboutSection = () => {
                   alt="map"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1 translate-y-1 size-12 rounded-full  after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1 translate-y-1 size-10 rounded-full  after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
                   <Image
                     src={smileMemoji}
                     alt="smiling memoji"
-                    className="size-12"
+                    className="size-10"
                   />
                 </div>
               </Card>
