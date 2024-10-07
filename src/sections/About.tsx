@@ -110,6 +110,12 @@ const hobbies = [
     left: "45%",
     top: "70%",
   },
+  {
+    title: "Food Enthusiast",
+    emoji: "🍽️",
+    left: "65%",
+    top: "25%",
+  }
 ];
 
 export const AboutSection = () => {
