@@ -9,6 +9,7 @@ import SparkleIcon from "@/assets/icons/sparkle.svg";
 import GithubIcon from "@/assets/icons/github.svg";
 import LinkedInIcon from "@/assets/icons/linkedin.svg";
 import EmailIcon from "@/assets/icons/email.svg";
+import ResumeIcon from "@/assets/icons/resume.svg"
 
 import { HeroOrbit } from "@/components/HeroOrbit";
 import { useEffect, useState } from "react";
@@ -49,6 +50,11 @@ export const HeroSection = () => {
       title: "Github",
       href: "https://github.com/harbeeny",
       icon: GithubIcon,
+    },
+    {
+      title: "Resume",
+      href: "/HAResume.pdf",
+      icon: ResumeIcon,
     },
     {
       title: "Email",
@@ -182,12 +188,30 @@ export const HeroSection = () => {
           <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4 relative z-10">
             {/* "Explore my Work" Button */}
             <a
-              href="#projects" // Link to the Projects section
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault(); // Prevent default jump
+                const element = document.getElementById("projects");
+                if (element) {
+                  element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }
+              }}
               className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
             >
               <span className="font-semibold">Explore my Work</span>
               <ArrowDown className="size-4" />
             </a>
+
+            {/* <a
+              href="#projects" // Link to the Projects section
+              className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
+            >
+              <span className="font-semibold">Explore my Work</span>
+              <ArrowDown className="size-4" />
+            </a> */}
 
             {/* "Let's Connect" Button */}
             <button
@@ -208,7 +232,7 @@ export const HeroSection = () => {
             onClick={closeModal}
           >
             <div
-              className={`bg-white rounded-lg p-6 w-[90%] md:w-[400px] relative transform transition-all duration-300 ${
+              className={`bg-gray-300 rounded-lg p-6 w-[90%] md:w-[400px] relative transform transition-all duration-300 ${
                 isModalOpen ? "scale-100 opacity-100" : "scale-95 opacity-0"
               }`}
               onClick={(e) => e.stopPropagation()}
@@ -219,7 +243,7 @@ export const HeroSection = () => {
               >
                 &times;
               </button>
-              <h2 className="text-xl text-gray-900 font-semibold mb-4  justify-center text-center">
+              <h2 className="text-xl text-gray-950 font-semibold mb-4  justify-center text-center">
                 Let's Connect 😃👍
               </h2>
               <div className="flex flex-col gap-4 pt-2 border-t-2 border-gray-950/5">
