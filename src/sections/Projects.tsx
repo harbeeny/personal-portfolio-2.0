@@ -12,7 +12,7 @@ import { SetStateAction, useState } from "react";
 
 // TODO: Implement my personal projects and descriptions
 
-const roomieDemoVid = "/video/output.mp4"
+const roomieVimeoLink = "https://vimeo.com/1017641419?share=copy#t=0";
 
 const portfolioProjects = [
   {
@@ -24,7 +24,7 @@ const portfolioProjects = [
       { title: "Modern day matching platform" },
       { title: "Excellent user experience" },
     ],
-    videoFile: roomieDemoVid,
+    vimeoLink: roomieVimeoLink,
     image: Roomies,
   },
   {
@@ -55,17 +55,17 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const [currentVideoFile, setCurrentVideoFile] = useState<string | null>(null);
+  const [currentVideoLink, setCurrentVideoLink] = useState<string | null>(null);
 
-  const openVideoModal = (videoFile: string) => {
-    setCurrentVideoFile(videoFile);
+  const openVideoModal = (videoLink: string) => {
+    setCurrentVideoLink(videoLink);
     setIsVideoModalOpen(true);
     document.body.style.overflow = "hidden"; // Prevent scrolling when the modal is open
   };
 
   const closeVideoModal = () => {
     setIsVideoModalOpen(false);
-    setCurrentVideoFile(null);
+    setCurrentVideoLink(null);
     document.body.style.overflow = "auto"; // Enable scrolling again
   };
 
@@ -110,9 +110,9 @@ export const ProjectsSection = () => {
                         </li>
                       ))}
                     </ul>
-                    {project.videoFile ? (
+                    {project.vimeoLink ? (
                       <button
-                        onClick={() => openVideoModal(project.videoFile)}
+                        onClick={() => openVideoModal(project.vimeoLink)}
                         className="bg-white text-gray-950 h-12 w-full md:w-auto rounded-xl px-6 font-semibold inline-flex items-center justify-center gap-2 mt-8 transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
                       >
                         <span>Watch Demo Video</span>
@@ -161,15 +161,14 @@ export const ProjectsSection = () => {
             >
               &times;
             </button>
-            <div className="relative w-full max-w-full rotate-180 overflow-hidden">
-              <video
-                controls
-                autoPlay
-                className="w-full h-full object-contain rotate-360 max-h-[70vh]"
-              >
-                <source src={currentVideoFile ?? undefined} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            <div className="relative w-full overflow-hidden aspect-w-16 aspect-h-9">
+              <iframe
+                src={currentVideoLink ?? ""}
+                title="Roomie Demo Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
             </div>
           </div>
         </div>
