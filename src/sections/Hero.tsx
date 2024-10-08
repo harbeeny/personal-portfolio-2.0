@@ -186,7 +186,7 @@ export const HeroSection = () => {
             </h1>
             <p className="mt-4 text-center text-white/60 md:text-lg">
               I specialize in transforming designs into functional,
-              high-performing web applications. Let's connect!
+              high-performing web applications. Let&#39;s connect!
             </p>
           </div>
 
@@ -224,7 +224,7 @@ export const HeroSection = () => {
               className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl transform transition-transform duration-200 hover:scale-105 hover:shadow-lg "
             >
               <span>👋</span>
-              <span className="font-semibold">Let's Connect</span>
+              <span className="font-semibold">Let&#39;s Connect</span>
             </button>
           </div>
         </div>
@@ -249,7 +249,7 @@ export const HeroSection = () => {
                 &times;
               </button>
               <h2 className="text-xl text-gray-950 font-semibold mb-4  justify-center text-center">
-                Let's Connect 😃👍
+                Let&#39;s Connect 😃👍
               </h2>
               <div className="flex flex-col gap-4 pt-2 border-t-2 border-gray-950/5">
                 {modalLinks.map((link) => {
