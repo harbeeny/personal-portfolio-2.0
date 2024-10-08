@@ -9,7 +9,7 @@ import SparkleIcon from "@/assets/icons/sparkle.svg";
 import GithubIcon from "@/assets/icons/github.svg";
 import LinkedInIcon from "@/assets/icons/linkedin.svg";
 import EmailIcon from "@/assets/icons/email.svg";
-import ResumeIcon from "@/assets/icons/resume.svg"
+import ResumeIcon from "@/assets/icons/resume.svg";
 
 import { HeroOrbit } from "@/components/HeroOrbit";
 import { useEffect, useState } from "react";
@@ -23,11 +23,16 @@ export const HeroSection = () => {
     // Slight delay to allow the modal to render before starting the animation
     setTimeout(() => {
       setIsModalOpen(true);
+      document.body.style.overflow = "hidden";
     }, 10);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setTimeout(() => {
+      setIsModalVisible(false);
+      document.body.style.overflow = " auto";
+    }, 300);
   };
 
   useEffect(() => {
@@ -216,7 +221,7 @@ export const HeroSection = () => {
             {/* "Let's Connect" Button */}
             <button
               onClick={openModal}
-              className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl transform "
+              className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl transform transition-transform duration-200 hover:scale-105 hover:shadow-lg "
             >
               <span>👋</span>
               <span className="font-semibold">Let's Connect</span>
@@ -239,7 +244,7 @@ export const HeroSection = () => {
             >
               <button
                 onClick={closeModal}
-                className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+                className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 size-8"
               >
                 &times;
               </button>

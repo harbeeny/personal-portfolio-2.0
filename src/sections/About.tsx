@@ -3,7 +3,7 @@
 // import StarIcon from "@/assets/icons/star.svg";
 import { TechIcon } from "@/components/TechIcon";
 import Image from "next/image";
-import bookImage from "@/assets/images/book-cover.png";
+import bookCover from "@/assets/images/atomic-habits.png"
 import mapImage from "@/assets/images/map.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
@@ -17,12 +17,13 @@ import JavaIcon from "@/assets/icons/java.svg"
 import PostgresIcon from "@/assets/icons/postgres.svg"
 import TSIcon from "@/assets/icons/typescript.svg"
 
-import { Card } from "@/components/Card";
+import { Card  } from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+
 
 const toolboxItems = [
   {
@@ -111,7 +112,7 @@ const hobbies = [
     top: "70%",
   },
   {
-    title: "Food Enthusiast",
+    title: "Eating",
     emoji: "🍽️",
     left: "65%",
     top: "25%",
@@ -129,19 +130,19 @@ export const AboutSection = () => {
             title="A Glimpse Into My World"
             description="Learn more about who I am, what I do, and what inspires me."
           />
-          {/* TODO: Implement onclick function that brings you to a list of books or carousel of books */}
+          
           <div className="mt-20 flex flex-col gap-8">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
               <Card className="h-[320px] md:col-span-2 lg:col-span-1">
                 <CardHeader
                   title="My Reads"
-                  description="Explore the books shaping my perspectives."
+                  description="Explore the book shaping my perspective."
                 />
                 <div className="w-40 mx-auto mt-2 md:mt-0">
-                  <Image src={bookImage} alt="Book Cover" />
+                  <Image src={bookCover} alt="Book Cover" />
                 </div>
               </Card>
-              {/* TODO: Add icons of languages/frameworks i use */}
+              
               <Card className="h-[320px] md:col-span-3 lg:col-span-2">
                 <CardHeader
                   title="My Toolbox"
