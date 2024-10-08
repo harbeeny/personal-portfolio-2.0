@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import Roomies from "@/assets/images/roomies.png";
 import Pricewise from "@/assets/images/Pricewise.png";
 import Chatlation from "@/assets/images/Chatlation.png";
@@ -8,11 +9,11 @@ import ArrowUpRight from "@/assets/icons/arrow-up-right.svg";
 
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 
-// TODO: Implement my personal projects and descriptions
-
-const roomieVimeoLink = "https://vimeo.com/1017641419?share=copy#t=0";
+// Vimeo URL for the Roomie demo video
+const roomieVimeoLink =
+  "https://player.vimeo.com/video/1017641419?badge=0&autopause=0&player_id=0&app_id=58479";
 
 const portfolioProjects = [
   {
@@ -146,13 +147,13 @@ export const ProjectsSection = () => {
       </div>
 
       {/* Video Modal */}
-      {isVideoModalOpen && (
+      {isVideoModalOpen && currentVideoLink && (
         <div
           className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
           onClick={closeVideoModal}
         >
           <div
-            className="bg-white rounded-lg p-6 w-[90%] md:w-[800px] relative"
+            className="bg-white rounded-lg p-6 w-full max-w-3xl h-[80vh] relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -161,11 +162,12 @@ export const ProjectsSection = () => {
             >
               &times;
             </button>
-            <div className="relative w-full overflow-hidden aspect-w-16 aspect-h-9">
+            <div className="relative w-full h-full">
               <iframe
-                src={currentVideoLink ?? ""}
+                src={currentVideoLink}
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
                 title="Roomie Demo Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"
               ></iframe>
