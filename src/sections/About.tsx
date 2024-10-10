@@ -139,7 +139,7 @@ export const AboutSection = () => {
                   description="Explore the book shaping my perspective."
                 />
                 <div className="w-40 mx-auto mt-2 md:mt-0">
-                  <Image src={bookCover} alt="Book Cover" />
+                  <Image src={bookCover} alt="Book Cover" unoptimized/>
                 </div>
               </Card>
               
@@ -194,6 +194,7 @@ export const AboutSection = () => {
                   src={mapImage}
                   alt="map"
                   className="h-full w-full object-cover"
+                  unoptimized
                 />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1 translate-y-1 size-10 rounded-full  after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>
@@ -202,6 +203,7 @@ export const AboutSection = () => {
                     src={smileMemoji}
                     alt="smiling memoji"
                     className="size-10"
+                    unoptimized
                   />
                 </div>
               </Card>

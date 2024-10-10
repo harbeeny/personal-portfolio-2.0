@@ -70,6 +70,7 @@ export const TestimonialsSection = () => {
                         src={testimonial.avatar}
                         alt={testimonial.name}
                         className="max-h-full"
+                        unoptimized
                       />
                     </div>
                     <div>
