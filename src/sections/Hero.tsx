@@ -1,6 +1,5 @@
 "use client";
 
-import memojiImage from "@/assets/images/memoji-computer.png";
 import Image from "next/image";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import grainImage from "@/assets/images/grain.jpg";
@@ -168,9 +167,11 @@ export const HeroSection = () => {
         <div className="container">
           <div className="flex flex-col items-center">
             <Image
-              src={memojiImage}
-              className="size-[120px] -mb-2"
+              src="/image/memoji-computer.png" // Start the path from the root
               alt="Person peeking behind Macbook"
+              width={120}
+              height={120}
+              className="size-[120px] -mb-2"
             />
             <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
               <div className="bg-green-500 size-2.5 rounded-full relative">
