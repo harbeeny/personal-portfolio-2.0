@@ -171,8 +171,9 @@ export const HeroSection = () => {
               alt="Person peeking behind Macbook"
               width={120}
               height={120}
-              className="size-[120px] -mb-2"
+              className="-mb-2"
               onError={() => console.error("Image failed to load")}
+              unoptimized
             />
             <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
               <div className="bg-green-500 size-2.5 rounded-full relative">
