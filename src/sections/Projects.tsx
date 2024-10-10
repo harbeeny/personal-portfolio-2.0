@@ -13,7 +13,7 @@ import { useState } from "react";
 
 // Vimeo URL for the Roomie demo video
 const roomieVimeoLink =
-  "https://player.vimeo.com/video/1017641419?badge=0&autopause=0&player_id=0&app_id=58479";
+  "https://player.vimeo.com/video/1018495046?h=0de299cd80";
 
 const portfolioProjects = [
   {
@@ -79,7 +79,7 @@ export const ProjectsSection = () => {
             title="Featured Projects"
             description="See how I transform concepts into engaging digital experiences."
           />
-          <div className="flex flex-col mt-10 md:mt-20 gap-20">
+          <div className="flex flex-col mt-10 md:mt-20 sm:mt-30 gap-20">
             {portfolioProjects.map((project, projectIndex) => (
               <Card
                 className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky top-16"

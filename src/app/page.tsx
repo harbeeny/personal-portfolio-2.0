@@ -9,7 +9,7 @@ import { TestimonialsSection } from "@/sections/Testimonials";
 
 export default function Home() {
   return (
-    <div className="overflow-x-clip">
+    <div className="">
       <Header />
       <HeroSection />
       <ProjectsSection />
